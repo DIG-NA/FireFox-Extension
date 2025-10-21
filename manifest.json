@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Translate Selected Text",
+    "version": "1.0",
+    "description": "Shows a translation popup when you select and translate text on any webpage.",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "https://translate.googleapis.com/",
+        "https://api.mymemory.translated.net/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "librefn.js",
+                "googlefn.js",
+                "mymemoraryfn.js",
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "googlefn.js"
+        ],
+        "persistent": false
+    }
+}
