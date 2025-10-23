@@ -8,10 +8,14 @@ async function WikitionaryHtmlFn(text) {
         const response = await fetch(link);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
-        // const Object = JSON.parse(data);
 
         // return data["query"]["pages"] || "no avalible data"
-        return findValueByKey(data, "extract")
+        const extract = findValueByKey(data, "extract");
+        const textarea = document.createElement("textarea");
+        textarea.innerHTML= extract;
+        return textarea.value;
+
+        // return findValueByKey(data, "extract")
 
     } catch (error) {
 
