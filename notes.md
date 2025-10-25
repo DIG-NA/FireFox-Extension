@@ -6,3 +6,4 @@ https://en.wiktionary.org/api/rest_v1/page/definition/fine
 
 next step:
 1. find a way to correctly show the html
+2. find a way to delete selected entries in the html like translation etc
