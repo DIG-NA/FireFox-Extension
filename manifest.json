@@ -6,7 +6,6 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "https://translate.googleapis.com/",
         "https://api.mymemory.translated.net/*",
         "https://en.wiktionary.org/"
     ],
@@ -17,8 +16,6 @@
             ],
             "js": [
                 "wikitionaryfn.js",
-                "librefn.js",
-                "googlefn.js",
                 "mymemoraryfn.js",
                 "content.js"
             ]
@@ -26,9 +23,7 @@
     ],
     "background": {
         "scripts": [
-            "googlefn.js",
-                            "wikitionaryfn.js"
-
+            "wikitionaryfn.js"
         ],
         "persistent": false
     }
