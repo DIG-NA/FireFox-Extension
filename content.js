@@ -22,10 +22,10 @@ Object.assign(popup.style, {
     position: 'absolute',
     display: 'none',
     zIndex: 10000,
-    maxWidth: '250px',
+    maxWidth: '350px',
     padding: '10px',
     borderRadius: '10px',
-    background: 'white',
+    background: 'black',
     boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
     fontFamily: 'sans-serif',
     fontSize: '14px',
@@ -66,14 +66,17 @@ button.addEventListener('click', async () => {
     //   const translated = await libretranslateText(selectedText, "en");
     //   console.log(translated);
 
-    const translated = await WikitionaryHtmlFn(selectedText);
-    console.log(translated);
+    // const translated = await WikitionaryHtmlFn(selectedText);
+    popup.innerHTML= await WikitionaryHtmlFn(selectedText);
+    console.log(popup.innerHTML);
+        // console.log(translated);
+
 
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popup.style.left = `${rect.left + window.scrollX}px`;
-    popup.textContent = translated || "No - Result";
+    // popup.textContent = translated || "No - Result";
     popup.style.display = 'block';
 });
 
