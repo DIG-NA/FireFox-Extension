@@ -14,9 +14,7 @@ async function WikitionaryHtmlFn(text) {
         const textarea = document.createElement("textarea");
         textarea.innerHTML= extract;
         return textarea.value;
-
-        // return findValueByKey(data, "extract")
-
+        
     } catch (error) {
 
         console.error("translation failed:", error);
