@@ -13,22 +13,34 @@ async function WikitionaryHtmlFn(text) {
         const extract = findValueByKey(data, "extract");
         const textarea = document.createElement("textarea");
         textarea.innerHTML= extract;
-        return textarea.value;
+
+        const container = document.createElement("div");
+        container.innerHTML=textarea.value;
+
+        cleaning(container);
+        return container.innerHTML;
         
     } catch (error) {
 
         console.error("translation failed:", error);
         return "translation error";
     }
+}
 
 
+function cleaning (container) {
 
+        // removing pronunciation list
+        const removepronunciationlist = container.querySelector('h3[data-mw-anchor="Pronunciation"] + ul');
+        if (removepronunciationlist) removepronunciationlist.remove();
+        
+        // removing pronunciation 
+        const removepronunciation = container.querySelector('h3[data-mw-anchor="Pronunciation"]');
+        if (removepronunciation) removepronunciation.remove();  
 }
 
 // API fun
 async function WikitionaryApiFn(text) {
-
-
 }
 
 function findValueByKey(obj, keyToFind) {
