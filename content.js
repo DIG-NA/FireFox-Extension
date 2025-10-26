@@ -31,7 +31,6 @@ Object.assign(popup.style, {
     fontSize: '14px',
     lineHeight: '1.4',
 });
-popup.textContent = '';
 document.body.appendChild(popup);
 
 // Listen for text selection
@@ -55,28 +54,17 @@ button.addEventListener('click', async () => {
     const selectedText = window.getSelection().toString().trim();
     if (!selectedText) return;
 
-    // google translate fun
-    //   const translated = await googletranslateText(selectedText,"en");
-    //   console.log(translated);
-
     // mymemory translate fun
     //   const translated = await mymemorytranslateText(selectedText,"en");
     //   console.log(translated);
 
-    //   const translated = await libretranslateText(selectedText, "en");
-    //   console.log(translated);
-
-    // const translated = await WikitionaryHtmlFn(selectedText);
-    popup.innerHTML= await WikitionaryHtmlFn(selectedText);
+    popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
     console.log(popup.innerHTML);
-        // console.log(translated);
-
 
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popup.style.left = `${rect.left + window.scrollX}px`;
-    // popup.textContent = translated || "No - Result";
     popup.style.display = 'block';
 });
 
