@@ -16,6 +16,7 @@ translation and it's content
 4. find a way to make it stick (not go away) when interacting with it
 5. find a way when the translation happen and the translation popup appear the 'translate' button disapear
 6. publish it and market it in different subreddits, twitter communities, etc 
+7. fix the error of it working in some page while not-working on the others
 
 
 v2:
