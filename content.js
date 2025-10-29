@@ -22,7 +22,8 @@ Object.assign(popup.style, {
     position: 'absolute',
     display: 'none',
     zIndex: 10000,
-    maxWidth: '350px',
+    maxWidth: '500px',
+    maxHeight: '300px',
     padding: '10px',
     borderRadius: '10px',
     background: 'black',
@@ -30,6 +31,7 @@ Object.assign(popup.style, {
     fontFamily: 'sans-serif',
     fontSize: '14px',
     lineHeight: '1.4',
+    overflow: 'auto'
 });
 document.body.appendChild(popup);
 
