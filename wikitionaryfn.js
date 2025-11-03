@@ -11,11 +11,29 @@ async function WikitionaryHtmlFn(text) {
 
         // return data["query"]["pages"] || "no avalible data"
         const extract = findValueByKey(data, "extract");
-        const textarea = document.createElement("textarea");
-        textarea.innerHTML= extract;
 
-        const container = document.createElement("div");
-        container.innerHTML=textarea.value;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(extract, 'text/html');
+        const container = document.createElement('div');
+        console.log("dom body innerhtml \n" + doc.body.innerHTML);
+        // basicaly the error happens in the next line 
+        // because some parts of the wikitionary provided html is broken, not full
+        // so there's 3 solutions 
+        // 1. sanitize it before passing it
+        // the rest is in chatgpt 
+        // container.innerHTML = doc.body.innerHTML;
+        for (const node of doc.body.childNodes) {
+        container.appendChild(node.cloneNode(true));
+        }
+        console.log('container:', container.innerHTML);
+
+        // const textarea = document.createElement("textarea");
+        // textarea.innerHTML= extract;
+        // console.log("extract \n" + textarea.value);
+
+        // const container = document.createElement("div");
+        // container.innerHTML=textarea.value;
+        // console.log("container \n" + textarea.value);
 
         cleaning(container);
         return container.innerHTML;
