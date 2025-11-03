@@ -6,17 +6,20 @@ https://en.wiktionary.org/api/rest_v1/page/definition/fine
 
 next step:
 v1:
-1. find a way to correctly show the html
+1. ~~find a way to correctly show the html ~~
 2. find a way to delete selected entries in the html like translation etc
 ex: 
 pronunciation and it's content
 translation and it's content
 
-3. find a way to scroll
-4. find a way to make it stick (not go away) when interacting with it
-5. find a way when the translation happen and the translation popup appear the 'translate' button disapear
+3. ~~ find a way to scroll ~~
+4. ~~find a way to make it stick (not go away) when interacting with it ~~ 
+5.~~ find a way when the translation happen and the translation popup appear the 'translate' button disapear ~~
 6. publish it and market it in different subreddits, twitter communities, etc 
-7. fix the error of it working in some page while not-working on the others
+7. ~~fix the error of it working in some page while not-working on the others ~~
+8. clean the code base
+9. change the error texts to something understandable other than: undefined, translation error, etc
+10. fix the weird variation of size of the popup that changes between sites 
 
 
 v2:
