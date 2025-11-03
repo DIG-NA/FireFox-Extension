@@ -36,7 +36,9 @@ Object.assign(popup.style, {
 document.body.appendChild(popup);
 
 // Listen for text selection
-document.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', (e) => {
+    if (popup.contains(e.target) || button.contains(e.target)) return;
+
     const selection = window.getSelection();
     if (!selection.isCollapsed) {
         const range = selection.getRangeAt(0);
@@ -53,26 +55,31 @@ document.addEventListener('mouseup', () => {
 
 // When button is clicked → show translation popup
 button.addEventListener('click', async () => {
-    const selectedText = window.getSelection().toString().trim();
+    const selectedText = window.getSelection().toString().trim().toLowerCase();
     if (!selectedText) return;
+    console.log(selectedText);
 
     // mymemory translate fun
     //   const translated = await mymemorytranslateText(selectedText,"en");
     //   console.log(translated);
 
     popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
-    console.log(popup.innerHTML);
+    // console.log(popup.innerHTML);
 
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popup.style.left = `${rect.left + window.scrollX}px`;
     popup.style.display = 'block';
+    button.style.display ='none';
 });
 
+// no need for this code, may need further testing to make sure
 // Hide popup when clicking outside
-document.addEventListener('click', (e) => {
-    if (!button.contains(e.target) && !popup.contains(e.target)) {
-        popup.style.display = 'none';
-    }
-});
+// document.addEventListener('click', (e) => {
+//     // !button.contains(e.target) && !popup.contains(e.target)
+//     if (!popup.contains(e.target)) {
+//         popup.style.display = 'none';
+//     }
+// });
+
