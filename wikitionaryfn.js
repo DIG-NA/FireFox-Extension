@@ -57,9 +57,9 @@ function cleaning (container) {
         if (removepronunciation) removepronunciation.remove();  
 }
 
-// API fun
-async function WikitionaryApiFn(text) {
-}
+// // API fun
+// async function WikitionaryApiFn(text) {
+// }
 
 function findValueByKey(obj, keyToFind) {
   if (obj.hasOwnProperty(keyToFind)) {
