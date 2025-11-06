@@ -15,11 +15,12 @@ translation and it's content
 3. ~~ find a way to scroll ~~
 4. ~~find a way to make it stick (not go away) when interacting with it ~~ 
 5.~~ find a way when the translation happen and the translation popup appear the 'translate' button disapear ~~
-6. publish it and market it in different subreddits, twitter communities, etc 
+6. publish it and market it in different subreddits ([chrome-extensions](https://www.reddit.com/r/chrome_extensions/)), twitter communities, hacker news, product hunt, add0n.com/ etc 
 7. ~~fix the error of it working in some page while not-working on the others ~~
 8. clean the code base
 9. change the error texts to something understandable other than: undefined, translation error, etc
-10. fix the weird variation of size of the popup that changes between sites 
+10.~~ fix the weird variation of size of the popup that changes between sites by making it in a fixed size~~, a problem may arise when the popup is close to the browser's border and can't take it's full size
+11. ~~ fix the stuck scroll-position between different popups~~
 
 
 v2:
