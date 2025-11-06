@@ -5,7 +5,7 @@ Object.assign(button.style, {
     position: 'absolute',
     display: 'none',
     zIndex: 9999,
-    padding: '6px 10px',
+    padding: '10px 10px',
     border: 'none',
     borderRadius: '6px',
     background: '#0078ff',
@@ -22,7 +22,7 @@ Object.assign(popup.style, {
     position: 'absolute',
     display: 'none',
     zIndex: 10000,
-    maxWidth: '500px',
+    width: '500px',    
     maxHeight: '300px',
     padding: '10px',
     borderRadius: '10px',
@@ -31,7 +31,7 @@ Object.assign(popup.style, {
     fontFamily: 'sans-serif',
     fontSize: '14px',
     lineHeight: '1.4',
-    overflow: 'auto'
+    overflowY: 'auto'
 });
 document.body.appendChild(popup);
 
@@ -66,12 +66,16 @@ button.addEventListener('click', async () => {
     popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
     // console.log(popup.innerHTML);
 
+
+
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popup.style.left = `${rect.left + window.scrollX}px`;
     popup.style.display = 'block';
     button.style.display ='none';
+    popup.scrollTop = 0;
+
 });
 
 // no need for this code, may need further testing to make sure
