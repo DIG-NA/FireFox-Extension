@@ -12,6 +12,12 @@ async function tryfun (selectedText) {
 
         result = await WikitionaryHtmlFn(textUpperCase);
         // console.log("\n second if "+ result);
+
+        if (result== "undefined") {
+
+          result = "no such entry in Wikitionary.";
+
+        }
     }
 
     return result;
@@ -63,7 +69,7 @@ async function WikitionaryHtmlFn(text) {
     } catch (error) {
 
         console.error("translation failed:", error);
-        return "translation error";
+        return "an extension error occured ";
     }
 }
 
