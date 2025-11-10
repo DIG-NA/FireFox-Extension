@@ -57,15 +57,12 @@ document.addEventListener('mouseup', (e) => {
 button.addEventListener('click', async () => {
     const selectedText = window.getSelection().toString().trim();
     if (!selectedText) return;
-    // console.log(selectedText);
 
     // mymemory translate fun
     //   const translated = await mymemorytranslateText(selectedText,"en");
     //   console.log(translated);
 
-    // popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
     popup.innerHTML= await tryfun(selectedText);
-    // console.log(popup.innerHTML);
 
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
@@ -76,13 +73,4 @@ button.addEventListener('click', async () => {
     popup.scrollTop = 0;
 
 });
-
-// no need for this code, may need further testing to make sure
-// Hide popup when clicking outside
-// document.addEventListener('click', (e) => {
-//     // !button.contains(e.target) && !popup.contains(e.target)
-//     if (!popup.contains(e.target)) {
-//         popup.style.display = 'none';
-//     }
-// });
 
