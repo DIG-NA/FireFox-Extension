@@ -21,8 +21,8 @@ translation and it's content
 6. publish it and market it in different subreddits ([chrome-extensions](https://www.reddit.com/r/chrome_extensions/)), twitter communities, hacker news, product hunt, add0n.com/ etc 
 7. ~~fix the error of it working in some page while not-working on the others ~~
 8. clean the code base
-9. change the error texts to something understandable other than: undefined, translation error, etc
-undefined arise when a selected text page doesn't exist(like venice((without a capital)) doesn't exist but Venice(with a capital) does exist)
+9..~~ change the error texts to something understandable other than: undefined, translation error, etc.~~
+.~~undefined arise when a selected text page doesn't exist(like venice(without a capital) doesn't exist but Venice(with a capital) does exist)~~
 10.~~ fix the weird variation of size of the popup that changes between sites by making it in a fixed size~~, a problem may arise when the popup is close to the browser's border and can't take it's full size
 11. ~~ fix the stuck scroll-position between different popups~~
 12. fix when i want to translate a word at the edge of the website and the popup shows outside the boundry of the website
