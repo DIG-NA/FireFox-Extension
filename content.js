@@ -64,9 +64,9 @@ button.addEventListener('click', async () => {
     //   console.log(translated);
 
     // popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
-    popup.innerHTML= await tryfun(selectedText) || "No - Result";
+    popup.innerHTML= await tryfun(selectedText);
     // console.log(popup.innerHTML);
-    
+
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
