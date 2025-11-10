@@ -55,19 +55,18 @@ document.addEventListener('mouseup', (e) => {
 
 // When button is clicked → show translation popup
 button.addEventListener('click', async () => {
-    const selectedText = window.getSelection().toString().trim().toLowerCase();
+    const selectedText = window.getSelection().toString().trim();
     if (!selectedText) return;
-    console.log(selectedText);
+    // console.log(selectedText);
 
     // mymemory translate fun
     //   const translated = await mymemorytranslateText(selectedText,"en");
     //   console.log(translated);
 
-    popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
+    // popup.innerHTML= await WikitionaryHtmlFn(selectedText) || "No - Result";
+    popup.innerHTML= await tryfun(selectedText) || "No - Result";
     // console.log(popup.innerHTML);
-
-
-
+    
     // Position the popup near the button
     const rect = button.getBoundingClientRect();
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
