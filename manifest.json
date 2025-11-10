@@ -15,7 +15,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "wikitionaryfn.js",
+                "translationfns.js",
                 "mymemoraryfn.js",
                 "content.js"
             ],
