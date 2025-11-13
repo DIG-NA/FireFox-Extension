@@ -18,20 +18,43 @@ document.body.appendChild(button);
 
 // Create the floating translation window
 const popup = document.createElement('div');
+// Object.assign(popup.style, {
+//     position: 'absolute',
+//     display: 'none',
+//     zIndex: 10000,
+//     width: '500px',    
+//     maxHeight: '300px',
+//     padding: '17px',
+//     borderRadius: '10px',
+//     background: 'black',
+//     boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+//     fontFamily: 'sans-serif',
+//     fontSize: '14px',
+//     lineHeight: '1.4',
+//     overflowY: 'auto'
+// });
 Object.assign(popup.style, {
     position: 'absolute',
     display: 'none',
     zIndex: 10000,
-    width: '500px',    
-    maxHeight: '300px',
-    padding: '10px',
-    borderRadius: '10px',
-    background: 'black',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-    fontFamily: 'sans-serif',
-    fontSize: '14px',
-    lineHeight: '1.4',
-    overflowY: 'auto'
+    width: '450px',
+    maxHeight: '320px',
+    padding: '18px 22px',
+    borderRadius: '14px',
+    background: 'linear-gradient(145deg, #111, #1c1c1c)',
+    color: '#f5f5f5',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.4)',
+    fontFamily: `'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,
+    fontSize: '15px',
+    lineHeight: '1.6',
+    overflowY: 'auto',
+    scrollbarWidth: 'thin',
+    scrollbarColor: '#888 #1c1c1c',
+    backdropFilter: 'blur(8px)',
+    border: '1px solid rgba(255, 255, 255, 0.08)',
+    transition: 'opacity 0.25s ease, transform 0.25s ease',
+    // opacity: 100,
+    transform: 'translateY(-10px)',
 });
 document.body.appendChild(popup);
 
