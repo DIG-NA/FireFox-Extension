@@ -26,8 +26,10 @@ translation and it's content
 10.~~ fix the weird variation of size of the popup that changes between sites by making it in a fixed size~~, a problem may arise when the popup is close to the browser's border and can't take it's full size
 11. ~~ fix the stuck scroll-position between different popups~~
 12. fix when i want to translate a word at the edge of the website and the popup shows outside the boundry of the website
+13. ~~fix when the popup & button styling change due to the overiding it with the style of the page (solved by encapsulating both elements with a shadow-dom ) ~~
 
 
 v2:
 1. beautifing it like the english dicitionary app so that it's easy to read
 2. make the theme change in accordance with the device theme
+3. consider publishing the extension in chrome
