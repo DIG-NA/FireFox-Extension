@@ -10,7 +10,7 @@ Object.assign(button.style, {
     fontSize: '14px',
     cursor: 'pointer',
     color: '#f5f5f5',
-    boxShadow: '0 2px 6px rgba(0,0,0,0.2)', 
+    boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
     background: 'linear-gradient(145deg, #111, #1c1c1c)',
     border: '1px solid rgba(255, 255, 255, 0.08)',
     transform: "translateX(-50%)",
@@ -47,7 +47,7 @@ document.body.appendChild(popup);
 // shadow-dom
 const host = document.createElement('div');
 document.body.appendChild(host);
-const shadow=host.attachShadow({mode:'open'});
+const shadow = host.attachShadow({ mode: 'open' });
 
 // Listen for text selection
 document.addEventListener('mouseup', (e) => {
@@ -75,11 +75,7 @@ button.addEventListener('click', async () => {
     const selectedText = window.getSelection().toString().trim();
     if (!selectedText) return;
 
-    // mymemory translate fun
-    //   const translated = await mymemorytranslateText(selectedText,"en");
-    //   console.log(translated);
-
-    popup.innerHTML= await tryfun(selectedText);
+    popup.innerHTML = await tryfun(selectedText);
     console.log(popup.innerHTML);
     shadow.appendChild(popup);
 
@@ -88,7 +84,7 @@ button.addEventListener('click', async () => {
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
     popup.style.left = `${rect.right + window.scrollX}px`;
     popup.style.display = 'block';
-    button.style.display ='none';
+    button.style.display = 'none';
     popup.scrollTop = 0;
 
 });
