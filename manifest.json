@@ -6,7 +6,6 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "https://api.mymemory.translated.net/*",
         "https://en.wiktionary.org/"
     ],
     "content_scripts": [
@@ -16,7 +15,6 @@
             ],
             "js": [
                 "translationfns.js",
-                "mymemoraryfn.js",
                 "content.js"
             ],
             "run_at": "document_end"
