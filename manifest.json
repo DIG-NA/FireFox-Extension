@@ -1,13 +1,28 @@
 {
     "manifest_version": 2,
-    "name": "Translate Selected Text",
+    "name": "The wikitionary Dicitionary!",
     "version": "1.0",
-    "description": "Shows a translation popup when you select and translate text on any webpage.",
+    "description": "Select a word and instantly view it's Wikitionary definition in a floating popup.",
     "permissions": [
         "activeTab",
-        "tabs",
         "https://en.wiktionary.org/"
     ],
+    "icons": {
+        "48": "icons/icon48.png",
+        "96": "icons/icon96.png",
+        "128": "icons/icon128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "wikitionary-translator@example.com",
+            "strict_min_version": "109.0",
+            "data_collection_permissions": {
+                "required": ["websiteContent"],
+                "websites": false,
+                "user_behavior": false
+            }
+        }
+    },
     "content_scripts": [
         {
             "matches": [
