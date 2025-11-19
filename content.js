@@ -75,8 +75,24 @@ button.addEventListener('click', async () => {
     const selectedText = window.getSelection().toString().trim();
     if (!selectedText) return;
 
-    popup.innerHTML = await tryfun(selectedText);
-    console.log(popup.innerHTML);
+    // popup.innerHTML = await tryfun(selectedText);
+    // // console.log(popup.innerHTML);
+    // shadow.appendChild(popup);
+
+    const htmlString = await tryfun(selectedText);
+
+    // Parse the HTML safely
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    const container = document.createElement('div');
+    for (const node of doc.body.childNodes) {
+        container.appendChild(node.cloneNode(true)); // safe clone
+    }
+
+    // Append the container to the popup
+    popup.replaceChildren(container);
+    // popup.appendChild(container);
     shadow.appendChild(popup);
 
     // Position the popup near the button
