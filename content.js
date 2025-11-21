@@ -96,9 +96,15 @@ button.addEventListener('click', async () => {
     shadow.appendChild(popup);
 
     // Position the popup near the button
-    const rect = button.getBoundingClientRect();
+    // const rect = button.getBoundingClientRect();
+
+    // position near the selected text
+    const selection = window.getSelection(); 
+    const range = selection.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+
     popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
-    popup.style.left = `${rect.right + window.scrollX}px`;
+    popup.style.left = `${rect.right + window.scrollX + 5}px`;
     popup.style.display = 'block';
     button.style.display = 'none';
     popup.scrollTop = 0;
