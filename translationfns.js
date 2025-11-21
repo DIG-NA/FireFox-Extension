@@ -42,7 +42,7 @@ async function WikitionaryHtmlFn(text) {
         container.appendChild(node.cloneNode(true));
         }
         
-        cleaning(container);
+        // cleaning(container);
         return container.innerHTML;
         
     } catch (error) {
