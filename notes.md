@@ -27,6 +27,7 @@ translation and it's content
 11. ~~ fix the stuck scroll-position between different popups~~
 12. fix when i want to translate a word at the edge of the website and the popup shows outside the boundry of the website
 13. ~~fix when the popup & button styling change due to the overiding it with the style of the page (solved by encapsulating both elements with a shadow-dom ) ~~
+14. add a way to reach the links returned by the html(ie when you search a a plural and it returns it's a plural of a singular ie when searching for republics it returns the following (plural of republic))
 
 
 v2:
